@@ -1,45 +1,45 @@
 [
-    {
-      "id": "greatwall",
-      "name": "Great Wall of China",
-      "picture": "images/great_wall.jpg",
-      "location": "Beijing, China"
-    },
-    {
-      "id": "petra",
-      "name": "City of Petra",
-      "picture": "images/petra.jpg",
-      "location": "Petra, Jordan"
-    },
-    {
-      "id": "christ",
-      "name": "Christ the Redeemer",
-      "picture": "images/christ_redeemer.jpg",
-      "location": "Rio-de-Janeiro, Brazil"
-    },
-    {
-      "id": "machupicchu",
-      "name": "The Machu Picchu",
-      "picture": "images/machu_picchu.jpg",
-      "location": "Cuzco, Peru"
-    },
-    {
-      "id": "chichenitza",
-      "name": "Chichen Itza",
-      "picture": "images/chichen_itza.jpg",
-      "location": "Valladolid, Mexico"
-    },
-    {
-      "id": "colosseum",
-      "name": "The Colosseum",
-      "picture": "images/colisee_de_rome.jpg",
-      "location": "Rome, Italy"
-    },
-    {
-      "id": "tajmahal",
-      "name": "Taj Mahal",
-      "picture": "images/taj_mahal.jpg",
-      "location": "Agra, India"
-    }
-  ]
+  {
+    "id": "greatwall",
+    "name": "Great Wall of China",
+    "picture": "images/great_wall.jpg",
+    "location": "Beijing, China"
+  },
+  {
+    "id": "petra",
+    "name": "City of Petra",
+    "picture": "images/petra.jpg",
+    "location": "Petra, Jordan"
+  },
+  {
+    "id": "christ",
+    "name": "Christ the Redeemer",
+    "picture": "images/christ_redeemer.jpg",
+    "location": "Rio-de-Janeiro, Brazil"
+  },
+  {
+    "id": "machupicchu",
+    "name": "The Machu Picchu",
+    "picture": "images/machu_picchu.jpg",
+    "location": "Cuzco, Peru"
+  },
+  {
+    "id": "chichenitza",
+    "name": "Chichen Itza",
+    "picture": "images/chichen_itza.jpg",
+    "location": "Valladolid, Mexico"
+  },
+  {
+    "id": "colosseum",
+    "name": "The Colosseum",
+    "picture": "images/colisee_de_rome.jpg",
+    "location": "Rome, Italy"
+  },
+  {
+    "id": "tajmahal",
+    "name": "Taj Mahal",
+    "picture": "images/taj_mahal.jpg",
+    "location": "Agra, India"
+  }
+]
   

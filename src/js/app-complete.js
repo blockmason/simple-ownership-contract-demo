@@ -2,13 +2,13 @@ const stampData = require('../stamps.json');
 const { link } = require('@blockmason/link-sdk');
 
 const ownershipProject = link({
-    clientId: '',
-    clientSecret: ''
+    clientId: 'rjCBlrHp1hdU_zPKnYML4s0tlzKxVL2hPF93Ucyin3E',
+    clientSecret: '8wgAyMec80wIaMuy34Hclzl7aeX8IwCPT60FKCNsRb81mbwMo2L9K1RqboyBlHf'
 });
 
 App = {
     init: function() {
-        // Load stamps.
+        // Load stamps
         const stampsRow = $('#stampsRow');
         const stampTemplate = $('#stampTemplate');
     
@@ -29,7 +29,16 @@ App = {
     },
 
     markOwned: async function(index, name) {
-        // Mark stamp ownership
+      const asset = {
+        "value": name
+      };  
+
+      const { result } = await ownershipProject.get('/ownerOf', asset);
+      
+      if (result !== '0x0000000000000000000000000000000000000000') {
+        $('.panel-stamp').eq(index).find('#ownerAddress').empty();
+        $('.panel-stamp').eq(index).find('#ownerAddress').append('Owner: ' + result).css({ wordWrap: "break-word" });
+      }
     },
 
     fetchAuthority: async function() {
@@ -44,7 +53,23 @@ App = {
           const owner = $(event.target).closest("div.owner-address").find("input[name='owner']").val();
           $(event.target).text("Processing").attr('disabled', true);
     
-        // Set Ownership code
+          const reqBody = {
+            "asset": stampId,
+            "owner": owner
+          };
+
+          const response = await ownershipProject.post('/setOwner', reqBody);
+          
+          if(response.errors) {
+            alert(response.errors[0].detail);
+            $(event.target).text("Own").attr('disabled', false);
+          } 
+          else {
+            console.log('Post request successful');
+            $(event.target).text("Own").attr('disabled', false);
+            $(event.target).closest("div.owner-address").find("input[name='owner']").val('');  
+            App.init();
+          }
         }
     }
 };
