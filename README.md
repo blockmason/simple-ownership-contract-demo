@@ -207,4 +207,11 @@ parcel src/index.html --https
 Note the following:
 * By default, the DApp will run at https://localhost:1234 . You can use the `-p` flag in the command above to specify a port.   
 
-*`Parcel` will create the following folders in your project folder: `.cache/` and `dist/`. If you run into any errors while running your DApp, delete these folders and try to run the `parcel` command above again.
+* `Parcel` will create the following folders in your project folder: `.cache/` and `dist/`. If you run into any errors while running your DApp, delete these folders and try to run the `parcel` command above again.
+
+Copy and paste in an Ethereum wallet address (you can use a MetaMask browser wallet for example) and try to own one of the Collectible Stamps. Your DApp should look similar to the following:
+
+![App Running](images/app_running.png)
+
+**Congrats** on getting your first DApp running from scratch using Link!
+
