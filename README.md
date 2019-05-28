@@ -202,14 +202,22 @@ Find the complete code in `app-complete.js`.
 
 > Run the application from the project root folder with:
 ```
-parcel src/index.html --https
+npm start
 ```
+
+See the full command this executes under `scripts` in `package.json`. 
+
 Note the following:
-* By default, the DApp will run at https://localhost:1234 . You can use the `-p` flag in the command above to specify a port.   
+* By default, the DApp will run at https://localhost:1234 . You can specify the `-p` flag in the scripts command in `package.json` if you want to use a specific port.
 
-* `Parcel` will create the following folders in your project folder: `.cache/` and `dist/`. If you run into any errors while running your DApp, delete these folders and try to run the `parcel` command above again.
+* `Parcel` will create the following folders in your project folder: `.cache/` and `dist/`. If you run into any errors while running your DApp, delete these folders and try to run `npm start` again.
 
-Copy and paste in an Ethereum wallet address (you can use a MetaMask browser wallet for example) and try to own one of the Collectible Stamps. Your DApp should look similar to the following:
+Copy and paste in an Ethereum wallet address (you can use a MetaMask browser wallet for example) and try to own one of the Collectible Stamps. *Note:* if you do not enter in a valid address, you will see the following error alert pop up:
+
+![Address Error Alert](images/address_error_alert.png)
+
+
+When running, your DApp should look similar to the following:
 
 ![App Running](images/app_running.png)
 
