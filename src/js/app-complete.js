@@ -68,7 +68,7 @@ App = {
             console.log('Post request successful');
             $(event.target).text("Own").attr('disabled', false);
             $(event.target).closest("div.owner-address").find("input[name='owner']").val('');  
-            App.init();
+            $(event.target).parents(".panel-stamp").find("#ownerAddress").text('Owner: ' + owner);
           }
         }
     }

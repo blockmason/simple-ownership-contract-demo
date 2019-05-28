@@ -2,43 +2,43 @@
   {
     "id": "greatwall",
     "name": "Great Wall of China",
-    "picture": "images/great_wall.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Grande-muraille-de-Chine-V.jpg",
     "location": "Beijing, China"
   },
   {
     "id": "petra",
     "name": "City of Petra",
-    "picture": "images/petra.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Petra-V.jpg",
     "location": "Petra, Jordan"
   },
   {
     "id": "christ",
     "name": "Christ the Redeemer",
-    "picture": "images/christ_redeemer.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Christ-redempteur-V.jpg",
     "location": "Rio-de-Janeiro, Brazil"
   },
   {
     "id": "machupicchu",
     "name": "The Machu Picchu",
-    "picture": "images/machu_picchu.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Machu-Picchu-V.jpg",
     "location": "Cuzco, Peru"
   },
   {
     "id": "chichenitza",
     "name": "Chichen Itza",
-    "picture": "images/chichen_itza.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Chichen-Itza-V.jpg",
     "location": "Valladolid, Mexico"
   },
   {
     "id": "colosseum",
     "name": "The Colosseum",
-    "picture": "images/colisee_de_rome.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Colisee-de-Rome-V.jpg",
     "location": "Rome, Italy"
   },
   {
     "id": "tajmahal",
     "name": "Taj Mahal",
-    "picture": "images/taj_mahal.jpg",
+    "picture": "https://www.wonders-of-the-world.net/Seven/images/Vignettes/Modernes/Taj-Mahal-V.jpg",
     "location": "Agra, India"
   }
 ]
