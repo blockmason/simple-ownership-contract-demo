@@ -227,10 +227,10 @@ When running, your DApp should look similar to the following:
 
 Throughout this example, we touched on Link concepts including deploying a smart contract, using the Link IDE, using Link API endpoints, and more.
 
-To learn more about Blockmason Link, check out the official Link website at blockmason.link or our weekly blog posts at blockmason.link/blog.
+To learn more about Blockmason Link, check out the official Link website at blockmason.link or our weekly blog posts at [blockmason.link/blog](blockmason.link/blog).
 
 ## You can also connect with the Blockmason Link Team on these social channels:
 
--    Twitter: https://twitter.com/BlockmasonLink
--    Telegram: https://t.me/blockmasonlink
--    Reddit: https://www.reddit.com/r/blockmason/
+-    Twitter: [https://twitter.com/BlockmasonLink](https://twitter.com/BlockmasonLink)
+-    Telegram: [https://t.me/blockmasonlink](https://t.me/blockmasonlink)
+-    Reddit: [https://www.reddit.com/r/blockmason/](https://www.reddit.com/r/blockmason/)
