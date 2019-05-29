@@ -1,10 +1,10 @@
 # Ownership DApp Demo
 
-Blockmason is excited to launch our second blockchain product called [Link](https://mason.link). Link allows developers to use smart contracts and the power of blockchain in their web or mobile applications with very little to no prior blockchain experience. Link creates classic, conventional, web-based APIs for any smart contract written on a programmable blockchain (e.g. Ethereum). 
+Blockmason is excited to launch our second blockchain product called [Link](https://mason.link). Link allows developers to use smart contracts and the power of blockchain in their web or mobile applications with *very little to no prior blockchain experience.* Link creates classic, conventional, web-based APIs for any smart contract written on a programmable blockchain (e.g. Ethereum). 
 
 In this activity, we will use Link to record ownership of assets (in this example, collectible digital stamps) on the blockchain. 
 
-With Link and its built-in private blockchain, there is no need to use common blockchain development tools such as Infura or acquire an underlying token such as ETH to pay for gas fees - it just works!
+With Link and its built-in private blockchain, there is no need to use common blockchain development tools such as Infura or acquire an underlying token such as ETH from an exchange to pay for gas fees - it just works!
 
 A simple front-end template is provided and [Parcel](https://parceljs.org/) will be used as the web application bundler and server.
 
@@ -12,7 +12,7 @@ The key steps of this activity are:
 1. Setup project and install dependencies
 2. Deploy a basic Ownership smart contract to the blockchain using Link
 3. Configure a front-end JavaScript file
-4. Run our decentralized application
+4. Run your decentralized application (DApp)
 
 ### Setup
 
@@ -22,7 +22,7 @@ You will need to setup the following for this activity:
 
 > Clone the Github repo: https://github.com/blockmason/simple-ownership-contract-demo into a new folder.
 
->  In the new folder, run `npm install` to install the following dependencies:
+>  In the new folder, run `npm install` which will install the following key dependencies:
 
 * `@blockmason/link-sdk` - https://www.npmjs.com/package/@blockmason/link-sdk - a simple SDK for interacting with the Link project.
 
@@ -48,9 +48,9 @@ contract Ownership {
     }
 }
 ```
-* Ownership is recorded in a mapping called `ownerOf` between an asset name (some string) and an Ethereum address (a 20 byte value). 
+* Ownership is recorded in a mapping called `ownerOf` between an asset name (some string) and an Ethereum address (a 20 byte value), which looks something like `0xca14563Ce2585B6026b7691f264ac2173CdEC530` for example.
   
-* Using the keyword `public` for the `ownerOf` mapping object automatically provides us with a getter. 
+* Using the keyword `public` for the `ownerOf` mapping object automatically provides us with a getter for that object.
 
 * The `authority` in this case will be a Link managed Ethereum account.
 
@@ -62,7 +62,7 @@ contract Ownership {
 
 ![Ownership Link API](images/ownership_link_api.png)
 
-**That's it!** Our Ownership smart contract is automatically deployed to the Link private network/blockchain and we are ready to use our web API endpoints in our front-end DApp. 
+**That's it!** Our Ownership smart contract is automatically deployed to the Link private blockchain and we are ready to use our web API endpoints in our front-end DApp. 
 
 ### Configure DApp Front-End
 
@@ -71,7 +71,7 @@ Taking a look inside the `src/` folder, we see that it is a very basic JavaScrip
 > Take a look at `index.html` and `js/app.js` code templates, which is where we will focus our efforts.
 
 #### index.html
-We see that the html template loads each of the stamps with data from `stamps.json` including an image, and an input field for setting an owners address. When a user presses the `Own` button, the intent is for the specified address to be recorded as the stamp's owner.
+We see that the html template loads each of the stamps with data from `stamps.json` including an image, and an input field for setting an owners address. When a user presses the `Own` button, the intent is for the user-specified address to be recorded as the stamp's owner.
 
 #### app.js
 The template code has been provided and we just need to fill in the details.
@@ -84,9 +84,10 @@ const ownershipProject = link({
     clientSecret: ''
 });
 ```
-We import the stamp data and the `@blockmason/link-sdk` package. We then need to provide the `clientId` and `clientSecret` from Link in order to use the `.get` and `.post` commands provided by the `link` object. 
+We import the stamp data and the `@blockmason/link-sdk` package. We then need to provide the `clientId` and `clientSecret` from Link in order to use the `.get` and `.post` methods provided by the `link` object. 
 
 > Copy and paste your specific `clientId` and `clientSecret` from the bottom of the Link IDE screen:
+
 ![Link creds](images/link_creds.png)
 
 ```
@@ -116,9 +117,9 @@ App = {
 The above code:
 * Loads all the stamp data as part of our `stampTemplate` into our `stampRow` element.
 
-* Calls `App.markOwned(..)` which will check the blockchain and mark an asset with its corresponding owner.
+* Calls `App.markOwned(..)` which will check the blockchain for ownership records and mark an asset with its corresponding owner on the front-end.
 
-* Returns a button click event listener
+* Returns a button 'click' event listener
 
 ```
 markOwned: async function(index, name) {
@@ -128,6 +129,7 @@ markOwned: async function(index, name) {
 Here, we will call the `GET /ownerOf` API endpoint to retrive the owner of an asset value we pass. 
 
 ![Get ownerOf](images/get_ownerof.png)
+
 Note the following:
 * We pass an attribute called `value` which is a string
 * We get a response object called `result` which is an address
@@ -163,6 +165,7 @@ setOwnership: async function(event) {
 Here, we will call the `POST /setOwner` API endpoint to set the owner of an asset with an address.
 
 ![Set Ownership](images/post_setowner.png)
+
 Note the following:
 * We pass an attribute called `asset` which is a string, and `owner` which is an address.
 * We don't get a response object
@@ -198,6 +201,8 @@ setOwnership: async function(event) {
 ```
 Find the complete code in `app-complete.js`. 
 
+Note - we didn't use any complex or large libraries like `web3.js`, which requires an instance of the `Ownership` contract to be created before the contract function methods can be called. **Except for our confirm message, there is nothing in the code to even indicate that blockchains are involved!**
+
 ### Run your DApp
 
 > Run the application from the project root folder with:
@@ -210,9 +215,9 @@ See the full command this executes under `scripts` in `package.json`.
 Note the following:
 * By default, the DApp will run at https://localhost:1234 . You can specify the `-p` flag in the scripts command in `package.json` if you want to use a specific port.
 
-* `Parcel` will create the following folders in your project folder: `.cache/` and `dist/`. If you run into any errors while running your DApp, delete these folders and try to run `npm start` again.
+* `Parcel` will create the following folders in your project folder: `.cache/` and `dist/`. If you run into any errors while running your DApp, delete these folders and run `npm start` again.
 
-Copy and paste in an Ethereum wallet address (you can use a MetaMask browser wallet for example) and try to own one of the Collectible Stamps. *Note:* if you do not enter in a valid address, you will see the following error alert pop up:
+Copy and paste in an Ethereum wallet address (for example `0xca14563Ce2585B6026b7691f264ac2173CdEC530`) and try to own one of the Collectible Stamps. *Note:* if you do not enter in a valid address, you will see the following error alert pop up:
 
 ![Address Error Alert](images/address_error_alert.png)
 
