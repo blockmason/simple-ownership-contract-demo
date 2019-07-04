@@ -2,8 +2,8 @@ const stampData = require('../stamps.json');
 const { link } = require('@blockmason/link-sdk');
 
 const ownershipProject = link({
-    clientId: 'rjCBlrHp1hdU_zPKnYML4s0tlzKxVL2hPF93Ucyin3E',
-    clientSecret: '8wgAyMec80wIaMuy34Hclzl7aeX8IwCPT60FKCNsRb81mbwMo2L9K1RqboyBlHf'
+    clientId: '',
+    clientSecret: ''
 });
 
 App = {
