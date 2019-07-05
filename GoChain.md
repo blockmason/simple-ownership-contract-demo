@@ -4,7 +4,7 @@ Blockmason is excited to announce the integration of GoChain into its functions-
 
 [GoChain](https://gochain.io) is a scalable, high performance and low cost blockchain that supports smart contracts and distributed applications. GoChain is fully compatible with existing Ethereum wallets, smart contracts and tools and boasts significantly faster transactions (1300 tps) and lower fees (7500x cheaper) than Ethereum. 
 
-In this activity, we will use Link to record ownership of assets (in this example, collectible digital stamps) on both GoChain and Ethereum Testnets and compare performances.
+In this activity, we will use Link to record ownership of assets (in this example, collectible digital stamps) on the GoChain Testnet. 
 
 **Note:** This example builds on an earlier activity posted here: https://blockmason.link/create-a-decentralized-ownership-app-using-blockmason-link
 
@@ -14,11 +14,11 @@ A simple front-end template is provided and [Parcel](https://parceljs.org/) will
 
 The key steps of this activity are:
 1. Setup project and install dependencies
-2. Fund your Link account with test GO and ETH tokens
+2. Fund your Link account with test GO tokens
 3. Create a basic Ownership smart contract
-4. Deploy the smart contract to the GoChain and Ethereum blockchains using Link
+4. Deploy the smart contract to the GoChain Testnet blockchains using Link
 5. Configure a front-end JavaScript file
-6. Run your decentralized application (DApp) on both GoChain and Ethereum
+6. Run your decentralized application (DApp) on GoChain Testnet
 
 ### Setup
 
@@ -36,9 +36,9 @@ You will need to setup the following for this activity:
 
 > Create a Blockmason Link account if you haven't done so already - register at https://mason.link/sign-up and then setup your demo organization.
 
-### Fund your Link account with test GO and ETH
+### Fund your Link account with test GO
 
-In the previous activity, we simply copied and pasted the Ownership smart contract code into the Link IDE and the contract was automatically deployed to the Link private blockchain without the need for acquiring any tokens to pay for gas or transaction costs. However to deploy on the GoChain or Ethereum Testnets, as we will do in this activity, we need to fund our Link account with test GO and ETH.
+In the previous activity, we simply copied and pasted the Ownership smart contract code into the Link IDE and the contract was automatically deployed to the Link private blockchain without the need for acquiring any tokens to pay for gas or transaction costs. However to deploy on the GoChain Testnet, as we will do in this activity, we need to fund our Link account with test GO.
 
 > Log into Link and copy your default Ethereum account as shown:
 
@@ -49,14 +49,6 @@ In the previous activity, we simply copied and pasted the Ownership smart contra
 You can confirm receipt of your testnet GO by searching your Link account address in the GoChain Testnet explorer https://testnet-explorer.gochain.io/home : 
 
 ![GoChain Testnet Explorer](images/gochain_testnet_explorer.png)
-
-> Similarly, receive some test ETH from the Ropsten Ethereum Faucet at https://faucet.ropsten.be
-
-![Ropsten Test Faucet](images/ropsten_test_faucet.png)
-
-You can confirm receipt of your test ETH by searching your Link account address in the Ropsten explorer https://ropsten.etherscan.io :
-
-![Ropsten Etherscan](images/ropsten_etherscan.png)
 
 ### Deploy the Ownership Smart Contract
 The `Ownership.sol` file in the `simple-ownership-contract-demo` repo contains a very simple Ownership Smart Contract programmed using Solidity (supported by both GoChain and Ethereum):
@@ -92,7 +84,7 @@ As mentioned, in the previous activity, we simply copied and pasted the `Ownersh
 
 ![New Contract Link](images/new_contract_link.png).
 
-> 3. Under *Which Ethereum account would you like to use?* use the *`Default Account`*. This is the account we seeded with test GO and ETH earlier. 
+> 3. Under *Which Ethereum account would you like to use?* use the *`Default Account`*. This is the account we seeded with test GO earlier. 
 
 ![Default Link Account](images/default_account_link.png)
 
@@ -128,29 +120,25 @@ Once you hit *`Finish`*, you should see your Ownership API documentation. Note t
 
 ![API Documentation Link](images/api_documentation_link.png)
 
+Let's also check that our Ownership contract deployed correctly on the GoChain Testnet. Click on the `Ethereum Contract Deployments` menu item to see a list of contract deployments and their addresses. Copy and paste the address of the `Ownership GoChain Testnet Deployment` into the GoChain Testnet explorer https://testnet-explorer.gochain.io to see the details of your contract deployment.
 
+![Link Contract Deployments List](images/link_contract_deployments_list.png)
 
- Sign into your Link account and copy and paste the  We'll call this project `Ownership`. 
+In the above example, the contract address on GoChain is `0xa187da3f23129e03904d1ad4a44062970b898e22`.
 
-![Ownership Link IDE](images/ownership_link_ide.png)
+![GoChain Explorer](images/gochain_explorer_contract.png)
 
-> Now click on the `API` button on the `Code/API` toggle and you will see API endpoints for all the Ownership smart contract functions and attributes!
-
-![Ownership Link API](images/ownership_link_api.png)
-
-**That's it!** Our Ownership smart contract is automatically deployed to the Link private blockchain and we are ready to use our web API endpoints in our front-end DApp. 
+And we see our contract deployed on GoChain!
 
 ### Configure DApp Front-End
 
-Taking a look inside the `src/` folder, we see that it is a very basic JavaScript app with data pulled in from `stamps.json`. We also make use of jQuery and Bootstrap in our code.
-
-> Take a look at `index.html` and `js/app.js` code templates, which is where we will focus our efforts.
+Refer to the previous activity (https://blockmason.link/create-a-decentralized-ownership-app-using-blockmason-link) for details on the JavaScript code section-by-section. Find the complete code in `app-complete.js`.  
 
 #### index.html
 We see that the html template loads each of the stamps with data from `stamps.json` including an image, and an input field for setting an owners address. When a user presses the `Own` button, the intent is for the user-specified address to be recorded as the stamp's owner.
 
-#### app.js
-The template code has been provided and we just need to fill in the details.
+#### app-complete.js
+The template code has been provided and we just need to fill in the authentication details.
 ```
 const stampData = require('../stamps.json');
 const { link } = require('@blockmason/link-sdk');
@@ -162,122 +150,11 @@ const ownershipProject = link({
 ```
 We import the stamp data and the `@blockmason/link-sdk` package. We then need to provide the `clientId` and `clientSecret` from Link in order to use the `.get` and `.post` methods provided by the `link` object. 
 
-> Copy and paste your specific `clientId` and `clientSecret` from the bottom of the Link IDE screen:
+> Copy and paste your specific `clientId` and `clientSecret` from the API documentation (under `client_id` and `client_secret` respectively) as noted in the previous section.
 
-![Link creds](images/link_creds.png)
+![API Documentation Link](images/api_documentation_link.png)
 
-```
-App = {
-    init: function() {
-        // Load stamps.
-        const stampsRow = $('#stampsRow');
-        const stampTemplate = $('#stampTemplate');
-    
-        for (i = 0; i < stampData.length; i ++) {
-            stampTemplate.find('.panel-title').text(stampData[i].name);
-            stampTemplate.find('img').attr('src', stampData[i].picture);
-            stampTemplate.find('.stamp-location').text(stampData[i].location);
-            stampTemplate.find('.btn-own').attr('data-id', stampData[i].id);
-    
-            stampsRow.append(stampTemplate.html());
-            App.markOwned(i, stampData[i].id);
-        }
-        return App.bindEvents();
-    },
-
-    bindEvents: function() {
-        $(document).on('click', '.btn-own', App.setOwnership);
-    },
-
-```
-The above code:
-* Loads all the stamp data as part of our `stampTemplate` into our `stampRow` element.
-
-* Calls `App.markOwned(..)` which will check the blockchain for ownership records and mark an asset with its corresponding owner on the front-end.
-
-* Returns a button 'click' event listener
-
-```
-markOwned: async function(index, name) {
-    // Mark stamp ownership
-},
-```
-Here, we will call the `GET /ownerOf` API endpoint to retrive the owner of an asset value we pass. 
-
-![Get ownerOf](images/get_ownerof.png)
-
-Note the following:
-* We pass an attribute called `value` which is a string
-* We get a response object called `result` which is an address
-
-The `index` function argument is used to identify which `.panel-stamp` element is being referenced during the for loop in `App.init()`. Our completed code looks like the following:
-```
-markOwned: async function(index, name) {
-    const asset = {
-        "value": name
-    };  
-
-    const { result } = await ownershipProject.get('/ownerOf', asset);
-    
-    if (result !== '0x0000000000000000000000000000000000000000') {
-        $('.panel-stamp').eq(index).find('#ownerAddress').empty();
-        $('.panel-stamp').eq(index).find('#ownerAddress').append('Owner: ' + result).css({ wordWrap: "break-word" });
-    }
-},
-```
-Lastly, we need to complete the `setOwnership` function:
-```
-setOwnership: async function(event) {
-    event.preventDefault();
-    if (confirm("Confirm ownership of this stamp, which can take a few seconds to record on the blockchain")) {
-        const stampId = $(event.target).data('id');
-        const owner = $(event.target).closest("div.owner-address").find("input[name='owner']").val();
-        $(event.target).text("Processing").attr('disabled', true);
-
-    // Set Ownership code
-    }
-}
-```
-Here, we will call the `POST /setOwner` API endpoint to set the owner of an asset with an address.
-
-![Set Ownership](images/post_setowner.png)
-
-Note the following:
-* We pass an attribute called `asset` which is a string, and `owner` which is an address.
-* We don't get a response object
-
-That last point is true if the POST request is successful. Otherwise, an `error` object is returned containing the error details. Our completed code looks like the following:
-```
-setOwnership: async function(event) {
-    event.preventDefault();
-    if (confirm("Confirm ownership of this stamp, which can take a few seconds to record on the blockchain")) {
-        const stampId = $(event.target).data('id');
-        const owner = $(event.target).closest("div.owner-address").find("input[name='owner']").val();
-        $(event.target).text("Processing").attr('disabled', true);
-
-        const reqBody = {
-            "asset": stampId,
-            "owner": owner
-        };
-
-        const response = await ownershipProject.post('/setOwner', reqBody);
-        
-        if(response.errors) {
-            alert(response.errors[0].detail);
-            $(event.target).text("Own").attr('disabled', false);
-        } 
-        else {
-            console.log('Post request successful');
-            $(event.target).text("Own").attr('disabled', false);
-            $(event.target).closest("div.owner-address").find("input[name='owner']").val('');  
-            $(event.target).parents(".panel-stamp").find("#ownerAddress").text('Owner: ' + owner);
-        }
-    }
-}
-```
-Find the complete code in `app-complete.js`. 
-
-Note - we didn't use any complex or large libraries like `web3.js`, which requires an instance of the `Ownership` contract to be created before the contract function methods can be called. **Except for our confirm message, there is nothing in the code to even indicate that blockchains are involved!**
+Note agin - we didn't use any complex or large libraries like `web3.js`, which requires an instance of the `Ownership` contract to be created before the contract function methods can be called. **Except for our confirm message, there is nothing in the code to even indicate that blockchains are involved!**
 
 ### Run your DApp
 
@@ -302,16 +179,5 @@ When running, your DApp should look similar to the following:
 
 ![App Running](images/app_running.png)
 
-**Congrats** on getting your first DApp running from scratch using Link!
+**Congrats** on getting your DApp running on GoChain using Link! In the next post, we will deploy the same `Ownership` smart contract on the Ethereum Testnet and compare performance with GoChain. 
 
----
-
-Throughout this example, we touched on Link concepts including deploying a smart contract, using the Link IDE, using Link API endpoints, and more.
-
-To learn more about Blockmason Link, check out the official Link website at [blockmason.link](blockmason.link) or our weekly blog posts at [blockmason.link/blog](blockmason.link/blog).
-
-## You can also connect with the Blockmason Link Team on these social channels:
-
--    Twitter: [https://twitter.com/BlockmasonLink](https://twitter.com/BlockmasonLink)
--    Telegram: [https://t.me/blockmasonlink](https://t.me/blockmasonlink)
--    Reddit: [https://www.reddit.com/r/blockmason/](https://www.reddit.com/r/blockmason/)
