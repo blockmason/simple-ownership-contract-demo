@@ -80,23 +80,23 @@ As mentioned, in the previous activity, we simply copied and pasted the `Ownersh
 
 ![Link New Project](images/link_new_project.png)
 
-> 2. Under *Which contract would you like to use?*, select *`Create new`* and then copy and paste the `Ownership.sol` code into the *`Source Code`* field. We'll set the *`Display Name`* as `Ownership`. Press *`Save`* and *`Next`*.
+> 2. Under *Which contract would you like to use?*, select *`Create new`* and then copy and paste the `Ownership.sol` code into the *Source Code* field. We'll set the *Display Name* as `Ownership`. Press *`Save`* and *`Next`*.
 
 ![New Contract Link](images/new_contract_link.png).
 
-> 3. Under *Which Ethereum account would you like to use?* use the *`Default Account`*. This is the account we seeded with test GO earlier. 
+> 3. Under *Which Ethereum account would you like to use?*, use the *`Default Account`*. This is the account we seeded earlier with test GO. 
 
 ![Default Link Account](images/default_account_link.png)
 
-> 4. Under *Which network would you like to use?* select *`Create new`* and call it `GoChain Testnet`. Keep the *Block Confirmations Needed* at 0. Press *`Save`* and *`Next`*.
+> 4. Under *Which network would you like to use?*, select *`Create new`* and call it `GoChain Testnet`. Keep the *Block Confirmations Needed* at 0. Press *`Save`* and *`Next`*.
 
 ![New Network Link](images/new_network_link.png)
 
-> 5. Under *Which connector would you like to use?* select *`Create new`*. Call this connector `GoChain Testnet Connector` and use the URL `https://testnet-rpc.gochain.io` (see https://github.com/gochain-io/docs#network-rpc-urls for more details). Ensure the *Network* selected is *`GoChain Testnet`*. Press *`Save`* and *`Next`*.
+> 5. Under *Which connector would you like to use?*, select *`Create new`*. Call this connector `GoChain Testnet Connector` and use the URL `https://testnet-rpc.gochain.io` (see https://github.com/gochain-io/docs#network-rpc-urls for more details). Ensure the *Network* selected is *`GoChain Testnet`*. Press *`Save`* and *`Next`*.
 
 ![New Network Connector Link](images/network_connector_link.png)
 
-> 6. Now we just need to label our Deployment. Under *Where is your contract deployed?*, select *`Create new`*. Call this deployment `Ownership GoChain Testnet Deployment`. Since this is **not an existing** contract deployment, leave the *Address* field blank. Ensure the *Account* is the `Default Account`, the *Contract* is the `Ownership` contract and the *Network* `GoChain Testnet`. Press *`Save`* and *`Next`*.
+> 6. Now we just need to label our Deployment. Under *Where is your contract deployed?*, select *`Create new`*. Call this deployment `Ownership GoChain Testnet Deployment`. Since we do not have **an existing contract deployment**, leave the *Address* field blank. Ensure the *Account* is the `Default Account`, the *Contract* is the `Ownership` contract and the *Network* `GoChain Testnet`. Press *`Save`* and *`Next`*.
 
 ![GoChain deployment Link](images/contract_deployment_link.png)
 
@@ -148,7 +148,7 @@ const ownershipProject = link({
     clientSecret: ''
 });
 ```
-We import the stamp data and the `@blockmason/link-sdk` package. We then need to provide the `clientId` and `clientSecret` from Link in order to use the `.get` and `.post` methods provided by the `link` object. 
+Above, we import the stamp data and the `@blockmason/link-sdk` package. We then need to provide the `clientId` and `clientSecret` from Link in order to use the `.get` and `.post` methods provided by the `link` object. 
 
 > Copy and paste your specific `clientId` and `clientSecret` from the API documentation (under `client_id` and `client_secret` respectively) as noted in the previous section.
 
