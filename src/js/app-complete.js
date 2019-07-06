@@ -1,3 +1,6 @@
+// Link user: harish+ownership@blockmason.io
+// Org: ownership-example
+
 const stampData = require('../stamps.json');
 const { link } = require('@blockmason/link-sdk');
 
