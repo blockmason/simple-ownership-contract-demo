@@ -1,4 +1,4 @@
-# Ownership DApp Demo using GoChain
+# Ownership DApp Demo using GoChain (Part 1)
 
 Blockmason is excited to announce the integration of GoChain into its functions-as-a-service (FaaS) product [Link](https://mason.link). Link allows developers to use smart contracts and the power of blockchain in their web or mobile applications with *very little to no prior blockchain experience.* Link creates classic, conventional, web-based APIs for any smart contract written on a programmable blockchain such as GoChain.
 
@@ -179,5 +179,5 @@ When running, your DApp should look similar to the following:
 
 ![App Running](images/app_running.png)
 
-**Congrats** on getting your DApp running on GoChain using Link! In the next post, we will deploy the same `Ownership` smart contract on the Ethereum Testnet and compare performance with GoChain. 
+**Congrats** on getting your DApp running on GoChain using Link! In Part 2, we will use a similar process to deploy the same `Ownership` smart contract on the Ethereum Testnet and compare performance with GoChain. 
 

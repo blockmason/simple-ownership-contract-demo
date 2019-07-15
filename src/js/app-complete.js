@@ -1,12 +1,9 @@
-// Link user: harish+ownership@blockmason.io
-// Org: ownership-example
-
 const stampData = require('../stamps.json');
 const { link } = require('@blockmason/link-sdk');
 
 const ownershipProject = link({
-    clientId: '',
-    clientSecret: ''
+    clientId: '2MvXH9cApIXZysbfT1HprtFI83VZ5lj-NKJ2UmETkGw',
+    clientSecret: 'fu53saVtXIA6xrj5DR/hv1y5gIo3e5Yp5UsFdE7eqxu9nkxoKUJWfDWrOovuzft'
 });
 
 App = {
