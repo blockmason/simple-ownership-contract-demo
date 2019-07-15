@@ -2,7 +2,7 @@
 
 Blockmason is excited to announce the integration of GoChain into its functions-as-a-service (FaaS) product [Link](https://mason.link). Link allows developers to use smart contracts and the power of blockchain in their web or mobile applications with *very little to no prior blockchain experience.* Link creates classic, conventional, web-based APIs for any smart contract written on a programmable blockchain such as GoChain.
 
-[GoChain](https://gochain.io) is a scalable, high performance and low cost blockchain that supports smart contracts and distributed applications. GoChain is fully compatible with existing Ethereum wallets, smart contracts and tools and boasts significantly faster transactions (1300 tps) and lower fees (7500x cheaper) than Ethereum. 
+[GoChain](https://gochain.io) is a scalable, high performance and low-cost blockchain that supports smart contracts and distributed applications. GoChain is fully compatible with existing Ethereum wallets, smart contracts, and tools and boasts significantly faster transactions (1300 tps) and lower fees (7500x cheaper) than Ethereum. 
 
 In this activity, we will use Link to record ownership of assets (in this example, collectible digital stamps) on the GoChain Testnet. 
 
@@ -22,7 +22,7 @@ The key steps of this activity are:
 
 ### Setup
 
-You will need to setup the following for this activity:
+You will need to set up the following for this activity:
 
 > Install `Node` and `npm`: https://nodejs.org/en/download/ (note - you can also use `yarn`)
 
@@ -34,11 +34,11 @@ You will need to setup the following for this activity:
 
 * `parcel-bundler` - https://parceljs.org/getting_started.html - for bundling and running the web application
 
-> Create a Blockmason Link account if you haven't done so already - register at https://mason.link/sign-up and then setup your demo organization.
+> Create a Blockmason Link account if you haven't done so already - register at https://mason.link/sign-up and then set up your demo organization.
 
 ### Fund your Link account with test GO
 
-In the previous activity, we simply copied and pasted the Ownership smart contract code into the Link IDE and the contract was automatically deployed to the Link private blockchain without the need for acquiring any tokens to pay for gas or transaction costs. However to deploy on the GoChain Testnet, as we will do in this activity, we need to fund our Link account with test GO.
+In the previous activity, we simply copied and pasted the Ownership smart contract code into the Link IDE and the contract was automatically deployed to the Link private blockchain without the need for acquiring any tokens to pay for gas or transaction costs. However, to deploy on the GoChain Testnet, as we will do in this activity, we need to fund our Link account with test GO.
 
 > Log into Link and copy your default Ethereum account as shown:
 
@@ -72,7 +72,7 @@ contract Ownership {
   
 * Using the keyword `public` for the `ownerOf` mapping object automatically provides us with a getter for that object.
 
-* The `authority` in this case will be a Link managed Ethereum address.
+* The `authority`, in this case, will be a Link managed Ethereum address.
 
 As mentioned, in the previous activity, we simply copied and pasted the `Ownership.sol` contract code into the Link IDE and the contract was automatically deployed to the Link private blockchain. However, deploying to public blockchains such as GoChain and Ethereum require a few more steps.
 
@@ -100,7 +100,7 @@ As mentioned, in the previous activity, we simply copied and pasted the `Ownersh
 
 ![GoChain deployment Link](images/contract_deployment_link.png)
 
-> 7. Now we're ready to deploy our contract to the GoChain Testnet. Press `Deploy` and you should get a deployment in progress indicator icon. This might take a few seconds to complete. If deployed correctly, you'll proceed to the next step to setup your API.
+> 7. Now we're ready to deploy our contract to the GoChain Testnet. Press `Deploy` and you should get a deployment in progress indicator icon. This might take a few seconds to complete. If deployed correctly, you'll proceed to the next step to set up your API.
 
 ![Ready to Deploy in Link](images/ready_deploy_link.png)
 
@@ -112,7 +112,7 @@ As mentioned, in the previous activity, we simply copied and pasted the `Ownersh
 
 ![Link Consumer New](images/link_consumer_new.png)
 
-> 10. Lastly, your consumer needs to authenticate with the Ownership API. A OAuth2.0 Client Secret is automatically generated. Ensure you are using the correct Principal/Consumer. Press *`Save`*, *`Next`* and then *`Finish`*.
+> 10. Lastly, your consumer needs to authenticate with the Ownership API. An OAuth2.0 Client Secret is automatically generated. Ensure you are using the correct Principal/Consumer. Press *`Save`*, *`Next`* and then *`Finish`*.
 
 ![Create new OAuth](images/oauth_link_new.png)
 
@@ -135,7 +135,7 @@ And we see our contract deployed on GoChain!
 Refer to the previous activity (https://blockmason.link/create-a-decentralized-ownership-app-using-blockmason-link) for details on the JavaScript code section-by-section. Find the complete code in `app-complete.js`.  
 
 #### index.html
-We see that the html template loads each of the stamps with data from `stamps.json` including an image, and an input field for setting an owners address. When a user presses the `Own` button, the intent is for the user-specified address to be recorded as the stamp's owner.
+We see that the HTML template loads each of the stamps with data from `stamps.json` including an image, and an input field for setting an owners address. When a user presses the `Own` button, the intent is for the user-specified address to be recorded as the stamp's owner.
 
 #### app-complete.js
 The template code has been provided and we just need to fill in the authentication details.
