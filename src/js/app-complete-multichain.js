@@ -7,13 +7,13 @@ const { link } = require('@blockmason/link-sdk');
 // Note this is just for demonstration purposes. 
 // In practice, don't put the clientId and clientSecret in the front-end code
 const ownershipProject = link({
-    clientId: '2MvXH9cApIXZysbfT1HprtFI83VZ5lj-NKJ2UmETkGw',
-    clientSecret: 'fu53saVtXIA6xrj5DR/hv1y5gIo3e5Yp5UsFdE7eqxu9nkxoKUJWfDWrOovuzft'
+    clientId: '',
+    clientSecret: ''
 });
 
 const paymentProject = link({
-    clientId: 'CDtk-_PygoeZwOseWaC-cBaOFKroaXQnj5TOcoyOA4c',
-    clientSecret: 'mCDzP2CHivesSWMT8VfG1sHZuuvBgzCXacDQws6uSi75doU/4hLWbQUCGqV3g28'
+    clientId: '',
+    clientSecret: ''
 });
 
 App = {
@@ -129,6 +129,7 @@ App = {
                     }
                 } else {
                     alert("The provided address is already the owner");
+                    $(event.target).text("Own").attr('disabled', false);
                     $(event.target).closest("div.owner-address").find("input[name='owner']").val('');
                 }
             } else {
