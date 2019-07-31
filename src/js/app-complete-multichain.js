@@ -4,18 +4,20 @@
 const stampData = require('../stamps.json');
 const { link } = require('@blockmason/link-sdk');
 
+// Note this is just for demonstration purposes. 
+// In practice, don't put the clientId and clientSecret in the front-end code
 const ownershipProject = link({
     clientId: '2MvXH9cApIXZysbfT1HprtFI83VZ5lj-NKJ2UmETkGw',
     clientSecret: 'fu53saVtXIA6xrj5DR/hv1y5gIo3e5Yp5UsFdE7eqxu9nkxoKUJWfDWrOovuzft'
 });
 
 const paymentProject = link({
-    clientId: 'h-K5LiZTO658OZ8oA_YhpCSV99K1oGw0mV7ENhBy7Ts',
-    clientSecret: 'H+JpRbTyYCZPrsp1iL9NyBJLIZCIBm9InGy3cEQC3QqzfD3/B2ryZp47qP+PG7I'
+    clientId: 'CDtk-_PygoeZwOseWaC-cBaOFKroaXQnj5TOcoyOA4c',
+    clientSecret: 'mCDzP2CHivesSWMT8VfG1sHZuuvBgzCXacDQws6uSi75doU/4hLWbQUCGqV3g28'
 });
 
 App = {
-    tokenConversionRate: 5,
+    tokenConversionRate: 1,
     
     init: function() {
         // Load stamps.
